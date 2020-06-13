@@ -1,25 +1,30 @@
 <div class="container">
 
-  <div class="ui-g">
+  <form autocomplete="off" responsive="true" [formGroup]="form">
 
-    <div class="ui-g-12">
-      <h1>Conjunto</h1>
+    <div class="ui-g">
+
+      <div class="ui-g-12">
+        <h1>Conjunto</h1>
+      </div>
+
+      <div class="ui-g-12 ui-fluid">
+        <label>Entrada</label>
+        <input type="text" formControlName="entrada" name="entrada" id="entrada" [(ngModel)]="entrada"
+          placeholder="Exemplo: 5 4 3 2 1" pInputText />
+      </div>
+
+      <div class="ui-g-12">
+        <button pButton type="button" pTooltip="Visualizar Saída" toolTipPosition="left" label="Resultado" (click)="resultado()"></button>
+      </div>
+
+      <div class="ui-g-12 ui-fluid">
+        <label>Saída</label>
+        <input type="text" formControlName="saida" name="saida" id="saida" [(ngModel)]="saida"
+          placeholder="Saída: 1 2 3 4 5" pInputText />
+      </div>
+
     </div>
-
-    <div class="ui-g-12 ui-fluid">
-      <label>Entrada</label>
-      <input type="text" placeholder="Exemplo: 5 4 3 2 1" pInputText />
-    </div>
-
-    <div class="ui-g-12">
-      <button pButton type="button" pTooltip="Visualizar Saída" toolTipPosition="left" label="Resultado"></button>
-    </div>
-
-    <div class="ui-g-12 ui-fluid">
-      <label>Saída</label>
-      <input type="text" placeholder="Saída: 1 2 3 4 5" pInputText />
-    </div>
-
-  </div>
+  </form>
 
 </div>
