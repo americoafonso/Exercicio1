@@ -5,23 +5,29 @@
     <div class="ui-g">
 
       <div class="ui-g-12">
-        <h1>Conjunto</h1>
+        <i class="pi pi-bookmark">Conjunto</i>
       </div>
 
       <div class="ui-g-12 ui-fluid">
         <label>Entrada</label>
-        <input type="text" formControlName="entrada" name="entrada" id="entrada" [(ngModel)]="entrada"
-          placeholder="Exemplo: 5 4 3 2 1" pInputText />
+        <textarea rows="5" cols="30" formControlName="entrada" name="entrada" id="entrada" [(ngModel)]="entrada"
+          placeholder="Exemplo: 5 4 3 2 1" pInputTextarea autoResize="autoResize"></textarea>
+
+        <small *ngIf="entrada" class="ui-message ui-messages-warn" icon="pi pi-exclamation-triangle">Caso digitar string
+          ou caracteres especiais serão removidos na saída</small>
       </div>
 
       <div class="ui-g-12">
-        <button pButton type="button" pTooltip="Visualizar Saída" toolTipPosition="left" label="Resultado" (click)="resultado()"></button>
+        <button class="botaoLimpar" pButton type="button" icon="pi pi-times" pTooltip="Limpar" toolTipPosition="top"
+          label="Limpar" (click)="limpar()"></button>
+        <button class="botaoResultado" pButton type="button" icon="pi pi-eye" pTooltip="Visualizar Saída"
+          toolTipPosition="top" label="Resultado" [disabled]="!entrada" (click)="resultado()"></button>
       </div>
 
       <div class="ui-g-12 ui-fluid">
         <label>Saída</label>
-        <input type="text" formControlName="saida" name="saida" id="saida" [(ngModel)]="saida"
-          placeholder="Saída: 1 2 3 4 5" pInputText />
+        <textarea rows="5" cols="30" formControlName="saida" name="saida" id="saida" [(ngModel)]="saida"
+          [readonly]="true" placeholder="Saída: 1 2 3 4 5" pInputTextarea autoResize="autoResize"></textarea>
       </div>
 
     </div>

@@ -1,0 +1,22 @@
+.botaoResultado {
+  float: right;
+  margin-right: 10px;
+}
+
+.botaoLimpar {
+  float: right;
+  margin-left: 10px;
+}
+
+form {
+  margin-top: 30px;
+}
+
+.ui-message {
+  margin: 0;
+  margin-top: 1px;
+  border-radius: 5px;
+  font-weight: bold;
+  color: rgb(97, 94, 94);
+  background-color: #fffa65;
+}

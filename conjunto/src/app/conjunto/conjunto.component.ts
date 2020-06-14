@@ -20,10 +20,19 @@ export class ConjuntoComponent implements OnInit {
     });
   }
 
+  /**
+   * Metodo para ordenar o conjunto e ordem crescente.
+   * @param a
+   * @param b
+   */
   ordenaNumber = function (a: number, b: number) {
     return a - b;
   }
 
+  /**
+   * Metodo para tratar os dados digitados pelo usuario.
+   * @param entrada
+   */
   resultado(entrada) {
     let entradaFormatada = this.entrada.split(' ');
     let arrayTemporario: any = [];
@@ -40,6 +49,13 @@ export class ConjuntoComponent implements OnInit {
     }
     this.saida = itemFinal.toString().split(',').join(' ');
 
+  }
+
+  /**
+   * Metodo para limpar os dados do formulario.
+   */
+  limpar() {
+    this.form.reset();
   }
 
   ngOnInit() {
